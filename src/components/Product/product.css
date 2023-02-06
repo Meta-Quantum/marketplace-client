@@ -1,0 +1,19 @@
+.product {
+    color: black;
+    border-radius: 20px;
+    background-color: rgb(204, 204, 207);
+    width: 250px;
+    height: 400px;
+  }
+  
+  .product-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgb(109, 108, 112);
+  }
