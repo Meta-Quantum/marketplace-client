@@ -1,7 +1,7 @@
 import "./LoginRegister.scss";
 
-function LoginPage() {
+function Login() {
   return <div>LoginPage</div>;
 }
 
-export default LoginPage;
+export default Login;

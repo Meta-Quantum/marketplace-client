@@ -1,3 +1,4 @@
+// stylesheet import
 import "./App.scss";
 
 function App() {
