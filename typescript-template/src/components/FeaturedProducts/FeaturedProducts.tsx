@@ -1,0 +1,7 @@
+import "./FeaturedProducts.scss";
+
+function FeaturedProducts() {
+  return <div>FeaturedProducts</div>;
+}
+
+export default FeaturedProducts;
