@@ -1,13 +1,16 @@
 // stylesheet import
+import "./App.scss";
+// router import
 import { RouterProvider } from "react-router";
 import router from "./routes";
-import "./App.scss";
+// components import
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div className="App">
       <RouterProvider router={router} />
-      <h1>React Template</h1>
+      <Footer />
     </div>
   );
 }
