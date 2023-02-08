@@ -4,30 +4,22 @@ import NavBottomCategories from "./components/NavBottomContent/NavBottomCategori
 import NavBottomMenu from "./components/NavBottomContent/NavBottomMenu";
 import SearchBox from "./components/SearchBox";
 import Cart from "./pages/Cart";
-import Seller from "./pages/Seller";
+import Seller from "./pages/Seller/Seller";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import Login from "./pages/LoginRegister/Login";
 import Register from "./pages/LoginRegister/Register";
 import AdminPage from "./pages/AdminPage/AdminPage";
-import SellerProfile from "./pages/SellerProfile/SellerProfile";
-import ProductList from "./pages/ProductList/ProductList";
-import OrderList from "./pages/OrderList/OrderList";
-import UserList from "./pages/UserList/UserList";
-import UserEdit from "./pages/UserEdit/UserEdit";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import Support from "./pages/Support/Support";
-import Profile from "./pages/Profile/Profile";
+import SellerProfile from "./pages/Seller/ProfileSeller/ProfileSeller";
+import Profile from "./pages/Profile";
 import AdminProductList from "./pages/AdminPage/ProductList/ProductList";
 import AdminOrderList from "./pages/AdminPage/OrderList/OrderList";
 import AdminUserList from "./pages/AdminPage/UserList/UserList";
 import AdminUserEdit from "./pages/AdminPage/UserEdit/UserEdit";
 import AdminDashboard from "./pages/AdminPage/Dashboard/Dashboard";
 import AdminSupport from "./pages/AdminPage/Support/Support";
-import SellerProductList from "./pages/SellerPage/ProductList/ProductList";
-import SellerOrderList from "./pages/SellerPage/OrderList/OrderList";
 
 // create categories/product imports
-import CreateProduct from "./pages/CreateProduct";
+import CreateProduct from "./pages/CreateProduct/CreateProduct";
 import CreateAutoMotoBoats from "./pages/CreateProduct/CreateCategories/CreateAutoMotoBoats";
 import CreateRealEstate from "./pages/CreateProduct/CreateCategories/CreateRealEstate";
 import CreateElectronicAppliances from "./pages/CreateProduct/CreateCategories/CreateElectronicAppliances";
@@ -50,16 +42,14 @@ import EditMomsKids from "./pages/EditProduct/EditCategories/EditMomsKids";
 import EditAgroIndustry from "./pages/EditProduct/EditCategories/EditAgroIndustry";
 import EditAnimals from "./pages/EditProduct/EditCategories/EditAnimals";
 import EditSportFreeTimeArt from "./pages/EditProduct/EditCategories/EditSportFreeTimeArt";
-import EditServicesCompanyEquipment from "./pages/EditProduct/EditCategories/EditServicesCompanyEquipment";
+import EditServiceCompanyEquipment from "./pages/EditProduct/EditCategories/EditServiceCompanyEquipment";
 import EditHouseGarden from "./pages/EditProduct/EditCategories/EditHouseGarden";
 
 // filter imports
-import Filters from "./pages/Filters";
+import Filters from "./pages/Filters/Filters";
 
 // router imports
 import { createBrowserRouter } from "react-router-dom";
-import CreateMomsKids from "./pages/CreateProduct/CreateCategories/CreateMomsKids";
-import NavBottomCategories from "../../src/components/NavBottomContent/NavBottomCategories";
 
 const router = createBrowserRouter([
   // components/pages paths
@@ -71,13 +61,6 @@ const router = createBrowserRouter([
   { path: ":id", element: <ProductPage /> },
   { path: "login", element: <Login /> },
   { path: "register", element: <Register /> },
-  { path: "product-list", element: <ProductList /> },
-  { path: "/product-list/page-number/:page-number", element: <ProductList /> },
-  { path: "order-list", element: <OrderList /> },
-  { path: "user-list", element: <UserList /> },
-  { path: "user/:id/edit", element: <UserEdit /> },
-  { path: "dashboard", element: <Dashboard /> },
-  { path: "support", element: <Support /> },
   { path: "profile", element: <Profile /> },
 
   // admin routes
@@ -96,8 +79,6 @@ const router = createBrowserRouter([
   // seller routes
   { path: "seller", element: <Seller /> },
   { path: "seller/:id", element: <SellerProfile /> },
-  { path: "seller/product-list", element: <SellerProductList /> },
-  { path: "seller/order-list", element: <SellerOrderList /> },
 
   //   create categories/product paths
   {
@@ -151,8 +132,8 @@ const router = createBrowserRouter([
     element: <EditSportFreeTimeArt />,
   },
   {
-    path: ":id/edit-product/services-company-equipment",
-    element: <EditServicesCompanyEquipment />,
+    path: ":id/edit-product/service-company-equipment",
+    element: <EditServiceCompanyEquipment />,
   },
   { path: ":id/edit-product/house&garden", element: <EditHouseGarden /> },
 

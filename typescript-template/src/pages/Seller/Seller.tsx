@@ -1,4 +1,4 @@
-import "./SellerPage.scss";
+import "./Seller.scss";
 
 function SellerPage() {
   return <div>SellerPage</div>;
