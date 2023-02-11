@@ -1,4 +1,4 @@
-import "./ProducPageImages.scss"
+import "./ProductPageImages.scss"
 import React, { useState, useRef } from "react"
 import { AiOutlineShop } from "react-icons/ai"
 import { BsBoxSeam, BsCardHeading } from "react-icons/bs"

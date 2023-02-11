@@ -1,6 +1,7 @@
 // stylesheet import
 import "./App.scss"
 // router import
+import React from "react"
 import { RouterProvider } from "react-router"
 import router from "./routes"
 // components import

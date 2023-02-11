@@ -1,7 +1,7 @@
 import React from "react"
 import "./TwoSetAds.scss"
-import first from "../../../../data/adsTwo/first.png"
-import second from "../../../../data/adsTwo/second.png"
+import first from "../../../../assets/adsTwo/first.png"
+import second from "../../../../assets/adsTwo/second.png"
 
 function TwoSetAds() {
   return (

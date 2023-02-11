@@ -2,7 +2,6 @@ import React, { Fragment, useEffect } from "react";
 import { useAppSelector} from "../features/hooks";
 // import MetaData from "../components/MetaData";
 import { Link } from "react-router-dom";
-import "./Profile.css";
 import LoadingBox from "../components/LoadingBox";
 
 function Profile({history}:any) {
