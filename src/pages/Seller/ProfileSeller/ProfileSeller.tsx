@@ -11,6 +11,7 @@ import Product from '../../../components/Product/Product';
 import "./ProfileSeller.scss"
 
 function ProfileSellerPage(props:any) {
+  console.log(props)
   const params = useParams();
   const { id: sellerId } = params;
 

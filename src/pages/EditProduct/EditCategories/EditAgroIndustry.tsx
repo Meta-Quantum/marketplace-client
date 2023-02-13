@@ -15,6 +15,7 @@ const editToastFail = () => toast.error("Sorry! Product unsuccessfully edited!")
 const editToastSuccess = () => toast.success("Product successfully edited!")
 
 function EditAgroIndustry(props: any) {
+  console.log(props);
   const { id } = useParams()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
@@ -107,6 +108,7 @@ function EditAgroIndustry(props: any) {
 
   useEffect(() => {
     Object.entries(mainCategoryObj).map((item, index) => {
+      console.log(index);
       if (item[0] === mainCategory) {
         setCategoryArray(Object.getOwnPropertyNames(item[1]))
       }

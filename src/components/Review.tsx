@@ -1,12 +1,14 @@
 
-import { Button, FloatingLabel, ListGroup } from "react-bootstrap"
-import { Form } from "react-router-dom"
-import Rating from "./Rating"
+// import { Button, FloatingLabel, ListGroup } from "react-bootstrap"
+// import { Form } from "react-router-dom"
+// import Rating from "./Rating"
+import { Button } from "react-bootstrap"
 import MessageBox from "./MessageBox"
-import React, { useRef, useState } from "react"
-
-function Review(props: any) {
-  const reviewsRef = useRef()
+import React, {  useState } from "react"
+// props:any below here
+function Review(props:any) {
+  console.log(props);
+  // const reviewsRef = useRef()
   const submitHandler = (e: any) => {
     e.preventDefault()
   }

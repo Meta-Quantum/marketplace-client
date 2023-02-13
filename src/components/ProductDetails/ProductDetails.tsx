@@ -172,36 +172,44 @@ function ProductDetails(props: any) {
       </div>
       <div className="tabs-detail-product">
         <Tabs>
-          <Tab onClick={handleClick} active={active === 0} id={0} ref={ref}>
+          {/* Below there was id={0} & active=(active === 0) */}
+          <Tab onClick={handleClick}  ref={ref}>
             Description
           </Tab>
-          <Tab onClick={handleClick} active={active === 1} id={1}>
+          {/* Below there was id={1} & active=(active === 1) */}
+          <Tab onClick={handleClick} >
             Specifications
           </Tab>
-          <Tab onClick={handleClick} active={active === 2} id={2}>
+          {/* Below there was id={2} & active=(active === 2) */}
+          <Tab onClick={handleClick} >
             Vendor
           </Tab>
-          <Tab onClick={handleClick} active={active === 3} id={3} ref={ref}>
+          {/* Below there was id={3} & active={active === 3} */}
+          <Tab onClick={handleClick}  ref={ref}>
             Reviews (0)
           </Tab>
-          <Tab onClick={handleClick} active={active === 4} id={4}>
+          {/* Below there was id={4} & active={active === 4} */}
+          <Tab onClick={handleClick} >
             Questions and Answers
           </Tab>
         </Tabs>
         <>
-          <Content active={active === 0}>
+        {/* Below there was active={active===0} */}
+          <Content>
             <div className="product-description">
               <div className="tab-title">Description</div>
               <p className="product-description-width">{product.description}</p>
             </div>
           </Content>
-          <Content active={active === 1}>
+          {/* Below there was active=(active === 1) */}
+          <Content >
             <div className="spec-tab">
               <div className="tab-title">Specifications</div>
               <ProductSpecification product={product} />
             </div>
           </Content>
-          <Content active={active === 2}>
+          {/* Below there was active={active === 2} */}
+          <Content >
             <div className="vendor-tab">
               <div className="tab-title"> Seller name</div>
               <div>
@@ -210,7 +218,8 @@ function ProductDetails(props: any) {
               </div>
             </div>
           </Content>
-          <Content active={active === 3}>
+          {/* Below there was active={active === 3} */}
+          <Content >
             <div className="review-tab">
               <div className="tab-title">Reviews</div>
               <div>
@@ -219,7 +228,8 @@ function ProductDetails(props: any) {
               </div>
             </div>
           </Content>
-          <Content active={active === 4}>
+          {/* Below there was active={active === 4} */}
+          <Content >
             <div className="questions-answers">
               <div className="tab-title">Questions and Answers</div>
               <form>

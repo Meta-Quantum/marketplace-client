@@ -1,5 +1,5 @@
 import "./UserList.scss"
-import { useEffect } from "react"
+import React,{ useEffect } from "react"
 import { useAppSelector, useAppDispatch } from "../../../features/hooks"
 import { useNavigate } from "react-router-dom"
 import { deleteUser, listUsers } from "../../../features/actions/userActions"
@@ -9,14 +9,15 @@ import { USER_DETAILS_RESET } from "../../../features/constants/userConstants"
 
 function AdminUserList(props: any) {
   const navigate = useNavigate()
-  const userList = useAppSelector((state) => state.userList)
+  const userList:any = useAppSelector((state) => state.userList)
   const { loading, error, users } = userList
 
-  const userDelete = useAppSelector((state) => state.userDelete)
+  const userDelete:any = useAppSelector((state) => state.userDelete)
   const { loading: loadingDelete, error: errorDelete, success: successDelete } = userDelete
 
   const dispatch = useAppDispatch()
   useEffect(() => {
+    console.log(props);
     dispatch(listUsers())
     dispatch({
       type: USER_DETAILS_RESET,

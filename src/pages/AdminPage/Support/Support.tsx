@@ -6,18 +6,18 @@ import MessageBox from "../../../components/MessageBox"
 
 let allUsers: any = []
 let allMessages: any = []
-let allSelectedUser = {}
+let allSelectedUser:any = {}
 const ENDPOINT =
   window.location.host.indexOf("localhost") >= 0 ? "http://127.0.0.1:5000" : window.location.host
 
 function AdminSupport() {
-  const [selectedUser, setSelectedUser] = useState({})
-  const [socket, setSocket] = useState(null)
-  const uiMessagesRef = useRef(null)
+  const [selectedUser, setSelectedUser] = useState<any>({})
+  const [socket, setSocket] = useState<any>([])
+  const uiMessagesRef:any = useRef(null)
   const [messageBody, setMessageBody] = useState("")
   const [messages, setMessages] = useState([])
   const [users, setUsers] = useState([])
-  const userSignin = useAppSelector((state) => state.userSignin)
+  const userSignin:any = useAppSelector((state) => state.userSignin)
   const { userInfo } = userSignin
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function AdminSupport() {
     }
 
     if (!socket) {
-      const sk = socketIOClient(ENDPOINT)
+      const sk:any = socketIOClient(ENDPOINT)
       setSocket(sk)
       sk.emit("onLogin", {
         _id: userInfo._id,
@@ -75,7 +75,7 @@ function AdminSupport() {
   const selectUser = (user: any) => {
     allSelectedUser = user
     setSelectedUser(allSelectedUser)
-    const existUser = allUsers.find((x) => x._id === user._id)
+    const existUser = allUsers.find((x:any) => x._id === user._id)
     if (existUser) {
       allUsers = allUsers.map((x: any) => (x._id === existUser._id ? { ...x, unread: false } : x))
       setUsers(allUsers)
@@ -131,7 +131,7 @@ function AdminSupport() {
             </div>
             <ul ref={uiMessagesRef}>
               {messages.length === 0 && <li>No message.</li>}
-              {messages.map((msg, index) => (
+              {messages.map((msg:any, index) => (
                 <li key={index}>
                   <strong>{`${msg.name}: `}</strong> {msg.body}
                 </li>

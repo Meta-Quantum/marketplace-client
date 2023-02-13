@@ -20,15 +20,15 @@ export const Tab = styled.button`
   width: 100%;
   margin-right: 0.1em;
   font-size: 1em;
-  border: ${(props) => (props.active ? "1px solid #ccc" : "")};
-  border-bottom: ${(props) => (props.active ? "none" : "")};
-  background-color: ${(props) => (props.active ? "white" : "lightgray")};
-  height: ${(props) => (props.active ? "3em" : "2.6em; top:.4em")};
+  border: ${(props:any) => (props.active ? "1px solid #ccc" : "")};
+  border-bottom: ${(props:any) => (props.active ? "none" : "")};
+  background-color: ${(props:any) => (props.active ? "white" : "lightgray")};
+  height: ${(props:any) => (props.active ? "3em" : "2.6em; top:.4em")};
   transition: background-color 0.5s ease-in-out;
   :hover {
     background-color: white;
   }
 `;
 export const Content = styled.div`
-  ${(props) => (props.active ? "" : "display:none")}
+  ${(props:any) => (props.active ? "" : "display:none")}
 `;

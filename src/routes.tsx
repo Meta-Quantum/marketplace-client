@@ -1,3 +1,6 @@
+import React from "react"
+
+
 // component imports
 import Homepage from "./pages/Homepage"
 import NavBottomCategories from "./components/NavBottomContent/NavBottomCategories"

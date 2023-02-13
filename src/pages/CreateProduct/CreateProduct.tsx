@@ -1,3 +1,4 @@
+import React from "react"
 import "./CreateProduct.scss"
 import { useEffect, useState } from "react"
 import { Button, Form } from "react-bootstrap"
@@ -16,6 +17,8 @@ const createToastFail = () => toast.error("Sorry! Translation unsuccessfully cre
 const createToastMaxLimit = () => toast("Max limit is 10MB on each file!")
 
 function CreateProduct(props: any) {
+  const propsValue = props;
+  console.log(propsValue)
   const [images, setImages] = useState([{}])
   const [imagesPreview, setImagesPreview] = useState([{}])
   const [name, setName] = useState("")
@@ -100,6 +103,7 @@ function CreateProduct(props: any) {
   }
   useEffect(() => {
     Object.entries(mainCategoryObj).map((item, index) => {
+      console.log(index)
       if (item[0] === mainCategorySelect) {
         setCategoryArray(Object.getOwnPropertyNames(item[1]))
       }

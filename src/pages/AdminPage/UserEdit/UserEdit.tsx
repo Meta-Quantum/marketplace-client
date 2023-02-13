@@ -1,6 +1,5 @@
 import "./UserEdit.scss"
-import { useEffect } from "react"
-import { useState } from "react"
+import React,{ useEffect, useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../../features/hooks"
 import { useNavigate, useParams } from "react-router-dom"
 import { detailsUser, updateUser } from "../../../features/actions/userActions"
@@ -18,14 +17,15 @@ function AdminUserEdit(props: any) {
   const [isSeller, setIsSeller] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
 
-  const userDetails = useAppSelector((state) => state.userDetails)
+  const userDetails:any = useAppSelector((state) => state.userDetails)
   const { loading, error, user } = userDetails
 
-  const userUpdate = useAppSelector((state) => state.userUpdate)
+  const userUpdate:any = useAppSelector((state) => state.userUpdate)
   const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = userUpdate
 
   const dispatch = useAppDispatch()
   useEffect(() => {
+    console.log(props);
     if (successUpdate) {
       dispatch({ type: USER_UPDATE_RESET })
       navigate("/userlist")

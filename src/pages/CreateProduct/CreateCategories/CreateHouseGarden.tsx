@@ -16,6 +16,7 @@ const createToastFail = () => toast.error("Sorry! Translation unsuccessfully cre
 const createToastMaxLimit = () => toast("Max limit is 10MB on each file!")
 
 function CreateHouseGarden(props: any) {
+
   const [images, setImages] = useState([{}])
   const [imagesPreview, setImagesPreview] = useState([{}])
   const [categoryArray, setCategoryArray] = useState([{}])
@@ -42,6 +43,7 @@ function CreateHouseGarden(props: any) {
   } = createdProduct
 
   useEffect(() => {
+    console.log(props);
     if (successCreate) {
       dispatch({ type: PRODUCT_CREATE_RESET })
       navigate("/")
@@ -100,6 +102,7 @@ function CreateHouseGarden(props: any) {
   }
   useEffect(() => {
     Object.entries(mainCategoryObj).map((item, index) => {
+      console.log(index);
       if (item[0] === mainCategorySelect) {
         setCategoryArray(Object.getOwnPropertyNames(item[1]))
       }

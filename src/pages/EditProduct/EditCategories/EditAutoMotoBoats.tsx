@@ -23,6 +23,7 @@ const editToastMaxLimit = () => toast.error("Max limit is 10MB on each file!")
 const editToastSuccess = () => toast.success("Product successfully edited!")
 
 function EditAutoMotoBoats(props: any) {
+  console.log(props);
   const { id } = useParams()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
@@ -148,6 +149,7 @@ function EditAutoMotoBoats(props: any) {
 
   useEffect(() => {
     Object.entries(mainCategoryObj).map((item: any, index) => {
+      console.log(index);
       if (item[0] === mainCategory) {
         setCategoryArray(Object.getOwnPropertyNames(item[1]))
       }

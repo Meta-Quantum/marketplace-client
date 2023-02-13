@@ -9,6 +9,7 @@ import ProductDetails from '../../components/ProductDetails/ProductDetails';
 import "./ProductPage.scss"
 
 function ProductPage(props:any) {
+  console.log(props);
   const ref = useRef(null);
   const [active, setActive] = useState(0);
 

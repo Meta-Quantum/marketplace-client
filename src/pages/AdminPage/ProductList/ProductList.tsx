@@ -1,38 +1,40 @@
 import "./ProductList.scss"
-import { useEffect } from "react"
+import React,{ useEffect } from "react"
 import { Button } from "react-bootstrap"
 import { useAppDispatch, useAppSelector } from "../../../features/hooks"
 import { Link, useParams, useNavigate, useLocation } from "react-router-dom"
-import { createProduct, deleteProduct, getProducts } from "../../../features/actions/productAction"
+import {  deleteProduct, getProducts } from "../../../features/actions/productAction"
 import LoadingBox from "../../../components/LoadingBox"
 import MessageBox from "../../../components/MessageBox"
 import {
-  PRODUCT_CREATE_RESET,
+  
   PRODUCT_DELETE_RESET,
 } from "../../../features/constants/productConstants"
 
 function AdminProductLine(props: any) {
   const navigate = useNavigate()
-  const { pageNumber = 1 } = useParams()
+  const { pageNumber = 1 }:any = useParams()
   const { pathname } = useLocation()
   const sellerMode = pathname.indexOf("/seller") >= 0
-  const productsList = useAppSelector((state) => state.productsList)
-  const { loading, error, products, page, pages } = productsList
+  const productsList:any = useAppSelector((state) => state.productsList)
+  const { loading, error, products, page, pages }:any = productsList
 
-  const createdProduct = useAppSelector((state) => state.createdProduct)
-  const {
-    loading: loadingCreate,
-    error: errorCreate,
-    success: successCreate,
-    product: created,
-  } = createdProduct
+  const createdProduct:any = useAppSelector((state) => state.createdProduct)
+  console.log(createdProduct)
+  // const {
+  //   loading: loadingCreate,
+  //   error: errorCreate,
+  //   success: successCreate,
+  //   product: created,
+  // } = createdProduct
 
-  const deletedProduct = useAppSelector((state) => state.deletedProduct)
+  const deletedProduct:any = useAppSelector((state) => state.deletedProduct)
   const { loading: loadingDelete, error: errorDelete, success: successDelete } = deletedProduct
-  const userSignin = useAppSelector((state) => state.userSignin)
+  const userSignin:any = useAppSelector((state) => state.userSignin)
   const { userInfo } = userSignin
   const dispatch = useAppDispatch()
   useEffect(() => {
+    console.log(props);
     if (successDelete) {
       dispatch({ type: PRODUCT_DELETE_RESET })
     }

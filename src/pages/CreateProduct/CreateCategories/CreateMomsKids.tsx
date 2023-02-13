@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React,{ useEffect, useState } from "react"
 import { Button, Form } from "react-bootstrap"
 import { Helmet } from "react-helmet-async"
 import { useAppDispatch, useAppSelector } from "../../../features/hooks"
@@ -23,6 +23,7 @@ const createToastFail = () => toast.error("Sorry! Translation unsuccessfully cre
 const createToastMaxLimit = () => toast("Max limit is 10MB on each file!")
 
 function CreateMomsKids(props: any) {
+  
   const [images, setImages] = useState([{}])
   const [imagesPreview, setImagesPreview] = useState([{}])
   const [categoryArray, setCategoryArray] = useState([{}])
@@ -53,6 +54,7 @@ function CreateMomsKids(props: any) {
   } = createdProduct
 
   useEffect(() => {
+    console.log(props);
     if (successCreate) {
       dispatch({ type: PRODUCT_CREATE_RESET })
       navigate("/")
@@ -113,6 +115,7 @@ function CreateMomsKids(props: any) {
   }
   useEffect(() => {
     Object.entries(mainCategoryObj).map((item, index) => {
+      console.log(index);
       if (item[0] === mainCategorySelect) {
         setCategoryArray(Object.getOwnPropertyNames(item[1]))
       }

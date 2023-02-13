@@ -1,5 +1,5 @@
 import "./ProductPageImages.scss"
-import React, { useState, useRef } from "react"
+import React, {  useRef } from "react"
 import { AiOutlineShop } from "react-icons/ai"
 import { BsBoxSeam, BsCardHeading } from "react-icons/bs"
 import { RiBillLine } from "react-icons/ri"

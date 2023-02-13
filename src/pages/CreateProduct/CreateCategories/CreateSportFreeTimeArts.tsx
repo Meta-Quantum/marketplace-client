@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React,{ useEffect, useState } from "react"
 import { Button, Form } from "react-bootstrap"
 import { Helmet } from "react-helmet-async"
 import { useAppDispatch, useAppSelector } from "../../../features/hooks"
@@ -101,6 +101,7 @@ function CreateSportFreeTimeArt() {
   }
   useEffect(() => {
     Object.entries(mainCategoryObj).map((item, index) => {
+      console.log(index);
       if (item[0] === mainCategorySelect) {
         setCategoryArray(Object.getOwnPropertyNames(item[1]))
       }

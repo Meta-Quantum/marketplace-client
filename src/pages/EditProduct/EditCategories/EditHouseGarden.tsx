@@ -18,6 +18,7 @@ const editToastSuccess = () => toast.success('Product successfully edited!');
 
 
 function EditHouseGarden(props:any) {
+  console.log(props);
   const [categoryArray, setCategoryArray] = useState([{}]);
   const [subCategoryArray, setSubCategoryArray] = useState([{}]);
   const dispatch = useAppDispatch();
@@ -110,6 +111,7 @@ function EditHouseGarden(props:any) {
   };
   useEffect(() => {
     Object.entries(mainCategoryObj).map((item, index) => {
+      console.log(index);
       if (item[0] === mainCategory) {
         setCategoryArray(Object.getOwnPropertyNames(item[1]));
       }
