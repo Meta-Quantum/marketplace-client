@@ -26,7 +26,7 @@ import {
   USER_TOPSELLERS_LIST_FAIL,
 } from '../constants/userConstants';
 
-export const register = (name, email, password) => async (dispatch) => {
+export const register = (name:any, email:any, password:any) => async (dispatch:any) => {
   dispatch({ type: USER_REGISTER_REQUEST, payload: { email, password } });
   try {
     const { data } = await Axios.post('/users/register', {
@@ -37,7 +37,7 @@ export const register = (name, email, password) => async (dispatch) => {
     dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
     localStorage.setItem('userInfo', JSON.stringify(data));
-  } catch (error) {
+  } catch (error:any) {
     dispatch({
       type: USER_REGISTER_FAIL,
       payload:
@@ -48,13 +48,13 @@ export const register = (name, email, password) => async (dispatch) => {
   }
 };
 
-export const signin = (email, password) => async (dispatch) => {
+export const signin = (email:any, password:any) => async (dispatch:any) => {
   dispatch({ type: USER_SIGNIN_REQUEST, payload: { email, password } });
   try {
     const { data } = await Axios.post('/users/signin', { email, password });
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
     localStorage.setItem('userInfo', JSON.stringify(data));
-  } catch (error) {
+  } catch (error:any) {
     dispatch({
       type: USER_SIGNIN_FAIL,
       payload:
@@ -65,14 +65,14 @@ export const signin = (email, password) => async (dispatch) => {
   }
 };
 
-export const signout = () => (dispatch) => {
+export const signout = () => (dispatch:any) => {
   localStorage.removeItem('userInfo');
   localStorage.removeItem('cartItems');
   localStorage.removeItem('shippingAddress');
   dispatch({ type: USER_SIGNOUT });
   document.location.href = '/signin';
 };
-export const detailsUser = (userId) => async (dispatch, getState) => {
+export const detailsUser = (userId:any) => async (dispatch:any, getState:any) => {
   dispatch({ type: USER_DETAILS_REQUEST, payload: userId });
   const {
     userSignin: { userInfo },
@@ -82,7 +82,7 @@ export const detailsUser = (userId) => async (dispatch, getState) => {
       headers: { Authorization: `Bearer ${userInfo?.token}` },
     });
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data });
-  } catch (error) {
+  } catch (error:any) {
     const message =
       error.response && error.response.data.message
         ? error.response.data.message
@@ -90,7 +90,7 @@ export const detailsUser = (userId) => async (dispatch, getState) => {
     dispatch({ type: USER_DETAILS_FAIL, payload: message });
   }
 };
-export const updateUserProfile = (user) => async (dispatch, getState) => {
+export const updateUserProfile = (user:any) => async (dispatch:any, getState:any) => {
   dispatch({ type: USER_UPDATE_PROFILE_REQUEST, payload: user });
   const {
     userSignin: { userInfo },
@@ -102,7 +102,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     dispatch({ type: USER_UPDATE_PROFILE_SUCCESS, payload: data });
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
     localStorage.setItem('userInfo', JSON.stringify(data));
-  } catch (error) {
+  } catch (error:any) {
     const message =
       error.response && error.response.data.message
         ? error.response.data.message
@@ -110,7 +110,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     dispatch({ type: USER_UPDATE_PROFILE_FAIL, payload: message });
   }
 };
-export const updateUser = (user) => async (dispatch, getState) => {
+export const updateUser = (user:any) => async (dispatch:any, getState:any) => {
   dispatch({ type: USER_UPDATE_PROFILE_REQUEST, payload: user });
   const {
     userSignin: { userInfo },
@@ -120,7 +120,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
       headers: { Authorization: `Bearer ${userInfo.token}` },
     });
     dispatch({ type: USER_UPDATE_SUCCESS, payload: data });
-  } catch (error) {
+  } catch (error:any) {
     const message =
       error.response && error.response.data.message
         ? error.response.data.message
@@ -128,7 +128,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
     dispatch({ type: USER_UPDATE_FAIL, payload: message });
   }
 };
-export const listUsers = () => async (dispatch, getState) => {
+export const listUsers = () => async (dispatch:any, getState:any) => {
   dispatch({ type: USER_LIST_REQUEST });
   try {
     const {
@@ -140,7 +140,7 @@ export const listUsers = () => async (dispatch, getState) => {
       },
     });
     dispatch({ type: USER_LIST_SUCCESS, payload: data });
-  } catch (error) {
+  } catch (error:any) {
     const message =
       error.response && error.response.data.message
         ? error.response.data.message
@@ -148,7 +148,7 @@ export const listUsers = () => async (dispatch, getState) => {
     dispatch({ type: USER_LIST_FAIL, payload: message });
   }
 };
-export const deleteUser = (userId) => async (dispatch, getState) => {
+export const deleteUser = (userId:any) => async (dispatch:any, getState:any) => {
   dispatch({ type: USER_DELETE_REQUEST, payload: userId });
   const {
     userSignin: { userInfo },
@@ -158,7 +158,7 @@ export const deleteUser = (userId) => async (dispatch, getState) => {
       headers: { Authorization: `Bearer ${userInfo.token}` },
     });
     dispatch({ type: USER_DELETE_SUCCESS, payload: data });
-  } catch (error) {
+  } catch (error:any) {
     const message =
       error.response && error.response.data.message
         ? error.response.data.message
@@ -166,12 +166,12 @@ export const deleteUser = (userId) => async (dispatch, getState) => {
     dispatch({ type: USER_DELETE_FAIL, payload: message });
   }
 };
-export const listTopSellers = () => async (dispatch) => {
+export const listTopSellers = () => async (dispatch:any) => {
   dispatch({ type: USER_TOPSELLERS_LIST_REQUEST });
   try {
     const { data } = await Axios.get('/users/top-sellers');
     dispatch({ type: USER_TOPSELLERS_LIST_SUCCESS, payload: data });
-  } catch (error) {
+  } catch (error:any) {
     const message =
       error.response && error.response.data.message
         ? error.response.data.message
