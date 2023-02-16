@@ -24,7 +24,6 @@ module.exports = {
     rules: [
       {
         test: /\.(png|jp(e*)g|gif)$/,
-        use: ["file-loader"],
         type: "asset",
         parser: {
           dataUrlCondition: {
@@ -34,7 +33,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: ["@svgr/webpack"],
+        use: "@svgr/webpack",
       },
       {
         test: /\.txt/,
@@ -60,6 +59,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env", "@babel/preset-react"],
+            plugins: ["@babel/plugin-proposal-class-properties"],
           },
         },
       },
@@ -75,6 +75,9 @@ module.exports = {
         },
       },
     ],
+  },
+  resolve: {
+    extensions: [".tsx", ".jsx", ".ts", ".js"],
   },
   plugins: [
     new CleanWebpackPlugin(),
