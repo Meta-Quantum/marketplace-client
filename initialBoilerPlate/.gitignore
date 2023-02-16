@@ -1,0 +1,35 @@
+# Logs
+log
+logs
+*.log
+npm-debug.log*
+*.rdb
+
+# Dependency directory
+node_modules/
+package-lock.json
+
+# Optional npm cache directory
+.npm
+
+# Editor
+.idea
+.vscode
+
+# Build
+dist/
+
+# env
+env/.env.local
+env/.env.development.local
+env/.env.test.local
+env/.env.production.local
+
+.DS_Store
+/log
+/readLocale.js
+/writeLocale.js
+/bingTranslateLocale.js
+/config/codegen/codegen.with.url.yml
+
+changelog_vars.json
