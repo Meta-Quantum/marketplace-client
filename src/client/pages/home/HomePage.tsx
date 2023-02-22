@@ -1,6 +1,6 @@
 import React from "react";
 
-import bla from "./bla.jpg";
+import bla from "./bla.png";
 
 const HomePage = () => {
   return (
