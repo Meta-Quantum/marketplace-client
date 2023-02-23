@@ -1,0 +1,22 @@
+.main-header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.content {
+  position: relative;
+  background-color: white;
+  max-width: 85rem;
+  align-self: center;
+  /* background: rgb(255, 255, 255);
+  background: radial-gradient(circle, rgb(246, 162, 10) 0%, rgba(148,187,233,1) 100%); */
+}
+
+/* @media (max-width: 768px) {
+  .content {
+    margin-top: 3.5rem;
+    padding: 1rem 2rem;
+  }
+} */

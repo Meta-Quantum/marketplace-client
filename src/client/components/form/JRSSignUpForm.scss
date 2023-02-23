@@ -1,0 +1,37 @@
+.jrs-form{
+  text-align: center;
+}
+.jrs-control-group {
+  min-width: 15rem;
+  flex: 1;
+text-align: center;
+}
+
+.jrs-form-actions {
+  text-align: center;
+}
+
+.jrs-form-actions button {
+  font: inherit;
+  background-color: #665a81;
+  color: rgba(255, 255, 255, 0.63);
+  border: 1px solid #240370;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.jrs-form-actions button:hover,
+.jrs-form-actions button:active {
+  background-color: #33059e;
+  border-color: #33059e;
+}
+a {
+  font-family: sans-serif;
+  padding: 20px;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}

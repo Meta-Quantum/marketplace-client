@@ -1,0 +1,154 @@
+.jrs-btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.selected {
+  color: rgb(99, 99, 99);
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.underline-hover,
+.jrs-btn:hover {
+  text-decoration: underline;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.btn {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.btn-black {
+  color: white;
+  background: black;
+  border: 1px solid black;
+}
+
+@media (hover: hover) {
+  .btn-black:hover {
+    color: black;
+    background: yellow;
+    border: 1px solid yellow;
+  }
+}
+
+.btn-black-gray {
+  color: white;
+  background: black;
+  border: 1px solid black;
+}
+
+@media (hover: hover) {
+  .btn-black-gray:hover {
+    background: rgb(117, 113, 113);
+    border: 1px solid rgb(117, 113, 113);
+  }
+}
+.btn-yellow {
+  color: black;
+  background: yellow;
+  border: 1px solid yellow;
+}
+
+@media (hover: hover) {
+  .btn-yellow:hover {
+    color: white;
+    background: black;
+    border: 1px solid black;
+  }
+}
+
+.btn-gray {
+  color: black;
+  background: white;
+  border: 1px solid transparent;
+}
+
+@media (hover: hover) {
+  .btn-gray:hover {
+    background: gray;
+    border: 1px solid gray;
+  }
+}
+
+.btn-gray-dark {
+  color: black;
+  background: gray;
+}
+@media (hover: hover) {
+  .btn-gray-dark:hover {
+    background: grey;
+    border: 1px solid grey;
+  }
+}
+
+.btn-darkgray {
+  color: white;
+  background: blueviolet;
+  border: 1px solid black;
+}
+@media (hover: hover) {
+  .btn-darkgray:hover {
+    background: black;
+  }
+}
+
+.disabled {
+  color: white;
+  background-color: grey;
+}
+@media (hover: hover) {
+  .disabled:hover {
+    color: white;
+    background-color: grey;
+  }
+}
+
+.btn-yellow-narrow {
+  background: yellow;
+  border: none;
+  color: black;
+  display: inline-block !important;
+  font-size: 2.88rem;
+  font-family: "ITCRoswell", "narkisblock-cond", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.disabled {
+  color: gray;
+  text-decoration: none;
+  cursor: not-allowed;
+}
+.disabled:hover {
+  color: gray;
+}
+
+.icons {
+  margin: rem-calc(12);
+}
+
+.icons .jrs-btn:hover {
+  fill: dawn;
+}
+
+.withIcon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
