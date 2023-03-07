@@ -6,22 +6,9 @@ import { store } from "../store";
 
 import App from "./app";
 
-// // SSR SPA
-// ReactDOM.hydrateRoot(
-//   document.getElementById("root"),
-//   <React.StrictMode>
-//     <Provider store={store}>
-//       <BrowserRouter>
-//         <App />
-//       </BrowserRouter>
-//     </Provider>
-//   </React.StrictMode>
-// );
-
-// SPA
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(
+// SSR SPA
+ReactDOM.hydrateRoot(
+  document.getElementById("root"),
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
@@ -30,3 +17,16 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
+
+// // SPA
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// root.render(
+//   <React.StrictMode>
+//     <Provider store={store}>
+//       <BrowserRouter>
+//         <App />
+//       </BrowserRouter>
+//     </Provider>
+//   </React.StrictMode>
+// );

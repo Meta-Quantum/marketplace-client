@@ -1,0 +1,68 @@
+.jrs-input {
+  margin-bottom: 1rem;
+  text-align: center;
+
+  & input,
+  label {
+    display: inline-block;
+  }
+  & input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+    &:focus {
+      outline: none;
+      border-color: #240370;
+      background-color: #e0d4fd;
+    }
+  }
+  & label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.invalid {
+  & input {
+    border: 1px solid #b40e0e;
+    background-color: #fddddd;
+    &:focus {
+      border-color: #ff8800;
+      background-color: #fbe8d2;
+    }
+  }
+}
+
+.error {
+  color: #b40e0e;
+  text-align: center;
+  padding: 0;
+  font-size: initial;
+}
+
+.tooltip {
+  width: 70%;
+  position: relative;
+  left: 15%;
+}
+
+.element {
+  list-style: none;
+  text-align: left;
+  color: green;
+  & p {
+    display: inline;
+  }
+}
+
+.highlighted {
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.not-checked {
+  color: #b40e0e;
+}

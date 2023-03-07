@@ -1,4 +1,9 @@
+// plugins
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+// libs
+const autoprefixer = require("autoprefixer");
 const path = require("path");
 
 const extraPath = path.join("config", "webpack");
@@ -53,17 +58,39 @@ module.exports.baseWebpack = {
         },
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /\.(css|sass|scss)$/,
+        sideEffects: true,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[local]_[hash:base64:4]",
+              },
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: "postcss-loader",
+            options: { postcssOptions: { plugins: [autoprefixer()] } },
+          },
+          {
+            loader: "sass-loader",
+          },
+        ],
       },
     ],
   },
   resolve: {
     extensions: [".tsx", ".jsx", ".ts", ".js"],
   },
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
+  ],
 };

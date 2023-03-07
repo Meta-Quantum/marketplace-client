@@ -1,0 +1,4 @@
+src/common/styles/**
+App.scss
+*.cmsblock.scss
+*.cmsblock.css

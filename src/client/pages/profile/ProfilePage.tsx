@@ -3,14 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCartData, sendCartData } from "../../../store/cartActions";
 import { uiActions } from "../../../store/uiSlice";
 import { userActions } from "../../../store/userSlice";
-import JRSCheckbox from "../../components/Input/JRSCheckbox";
 import JRSInput from "../../components/Input/JRSInput";
-import JRSSelect from "../../components/Input/JRSSelect";
 
-import bla from "./bla.png";
-import ktk from "./kTk.jpg";
-
-const HomePage = () => {
+const ProfilePage = () => {
   const dispatch = useDispatch();
   const { notification, cartIsVisible } = useSelector((state) => (state as any).ui);
   const { userName, isAuth } = useSelector((state) => (state as any).user);
@@ -27,9 +22,6 @@ const HomePage = () => {
       >
         Press Me! {cartIsVisible}
       </button>
-      <JRSInput />
-      <JRSCheckbox />
-      <JRSSelect />
       {notification && (
         <>
           <h2>{notification.title}</h2>
@@ -48,6 +40,7 @@ const HomePage = () => {
         Press Me! {userName}
       </button>
       <h3> DD & CO </h3>
+      <JRSInput />
       <button
         onClick={() => {
           console.log("Bye NFT Launchpad");
@@ -55,14 +48,10 @@ const HomePage = () => {
           dispatch(userActions.logOut());
         }}
       >
-        Don't Press Me! {isAuth}
+        Don't Press Me!
       </button>
-      <br />
-      <img style={{ height: 256, width: "auto", display: "inline-block" }} src={bla} alt="KTKfeetContest.jpg" />
-      <img style={{ height: 256, width: "auto", display: "inline-block" }} src={ktk} alt="KTKfeetContest.jpg" />
-      <h2>Durotan</h2>
     </div>
   );
 };
 
-export { HomePage };
+export { ProfilePage };
