@@ -3,8 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const { baseWebpack, appRoot } = require("./base.config");
 
-console.log(...baseWebpack.module.rules.slice(0, 6));
-
 module.exports = {
   ...baseWebpack,
   entry: path.resolve(appRoot, "src", "client", "index.tsx"),

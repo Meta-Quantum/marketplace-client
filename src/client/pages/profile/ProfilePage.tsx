@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { fetchCartData, sendCartData } from "../../../store/cartActions";
 import { uiActions } from "../../../store/uiSlice";
 import { userActions } from "../../../store/userSlice";
@@ -9,6 +10,7 @@ const ProfilePage = () => {
   const dispatch = useDispatch();
   const { notification, cartIsVisible } = useSelector((state) => (state as any).ui);
   const { userName, isAuth } = useSelector((state) => (state as any).user);
+  const navigate = useNavigate();
 
   console.log({ notification, cartIsVisible });
 
@@ -22,6 +24,15 @@ const ProfilePage = () => {
       >
         Press Me! {cartIsVisible}
       </button>
+      <a
+        href="/"
+        onClick={(e) => {
+          e.preventDefault();
+          navigate("/", {});
+        }}
+      >
+        Home
+      </a>
       {notification && (
         <>
           <h2>{notification.title}</h2>
